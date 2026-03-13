@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" type="image/x-icon" href="logo.svg">
+    <title>Términos y Condiciones | DolarAhora</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="contenedor-legal">
+        <header class="encabezado-legal">
+            <h1>Términos y Condiciones de Uso</h1>
+            <p class="subtitulo-legal">Última actualización: <span id="fechaActual"></span></p>
+        </header>
+        
+        <main>
+            <section class="seccion-legal">
+                <h2 class="titulo-seccion">1. Aceptación de los Términos</h2>
+                <div class="contenido-seccion">
+                    <p>Al acceder y utilizar el sitio web <strong>DolarAhora</strong> (en adelante, "el Sitio" o "nuestro servicio"), usted acepta estar sujeto a estos Términos y Condiciones de Uso. Si no está de acuerdo con alguno de estos términos, le recomendamos que no utilice nuestro servicio.</p>
+                </div>
+            </section>
+            
+            <section class="seccion-legal">
+                <h2 class="titulo-seccion">2. Descripción del Servicio</h2>
+                <div class="contenido-seccion">
+                    <p><strong>DolarAhora</strong> es una herramienta informativa que proporciona:</p>
+                    <ul>
+                        <li>Cotizaciones estimadas de USDT en Bolívares (VES)</li>
+                        <li>Cotizaciones de Dólar Estadounidense (USD) en Bolívares (VES)</li>
+                        <li>Cotizaciones de Euro (EUR) en Bolívares (VES)</li>
+                        <li>Una calculadora de conversión para estimar valores</li>
+                    </ul>
+                    
+                    <div class="bloque-destacado bloque-advertencia">
+                        <p><strong>IMPORTANTE:</strong> Este servicio es únicamente informativo. Los valores mostrados son estimaciones basadas en datos de terceros y pueden no reflejar el valor exacto de mercado en tiempo real.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="seccion-legal">
+                <h2 class="titulo-seccion">3. Limitación de Responsabilidad</h2>
+                <div class="contenido-seccion">
+                    <div class="bloque-destacado bloque-advertencia">
+                        <p><strong>DESCARGO DE RESPONSABILIDAD FINANCIERA:</strong></p>
+                        <ul>
+                            <li>NO ofrecemos asesoría financiera, de inversión o legal</li>
+                            <li>NO somos una plataforma de intercambio o transacciones</li>
+                            <li>NO garantizamos la exactitud, actualidad o integridad de la información</li>
+                            <li>NO nos responsabilizamos por decisiones financieras tomadas basadas en la información proporcionada</li>
+                        </ul>
+                    </div>
+                    
+                    <p>El uso de la información proporcionada en este sitio es bajo su propio riesgo. Recomendamos siempre verificar los valores con fuentes oficiales antes de realizar cualquier transacción.</p>
+                </div>
+            </section>
+            
+            <section class="seccion-legal">
+                <h2 class="titulo-seccion">4. Frecuencia de Actualización</h2>
+                <div class="contenido-seccion">
+                    <div class="bloque-destacado bloque-informativo">
+                        <p><strong>Horarios de actualización:</strong></p>
+                        <ul>
+                            <li><strong>USDT:</strong> Se actualiza automáticamente cada 10 minutos (valor estimado promedio)</li>
+                            <li><strong>USD y EUR:</strong> Se actualizan automáticamente cada hora (datos de tasas oficiales)</li>
+                        </ul>
+                    </div>
+                    <p>Los valores mostrados incluyen la hora de su última actualización para mayor transparencia.</p>
+                </div>
+            </section>
+            
+            <section class="seccion-legal">
+                <h2 class="titulo-seccion">5. Propiedad Intelectual</h2>
+                <div class="contenido-seccion">
+                    <p>Todos los derechos de propiedad intelectual del sitio web <strong>DolarAhora</strong>, incluyendo pero no limitado a su diseño, interfaz, código fuente y funcionalidades, pertenecen a su desarrollador, salvo aquellos elementos pertenecientes a terceros.</p>
+                    
+                    <div class="bloque-destacado bloque-informativo">
+                        <p><strong>Fuentes de datos utilizadas:</strong></p>
+                        <ul>
+                            <li>API de Binance P2P para cotizaciones de USDT</li>
+                            <li>API de open.er-api.com para cotizaciones de USD y EUR</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="seccion-legal">
+                <h2 class="titulo-seccion">6. Jurisdicción y Ley Aplicable</h2>
+                <div class="contenido-seccion">
+                    <p>Estos Términos y Condiciones se rigen por las leyes de la República Bolivariana de Venezuela. Cualquier disputa relacionada con el uso de este sitio web estará sujeta a la jurisdicción exclusiva de los tribunales competentes de Venezuela.</p>
+                </div>
+            </section>
+            
+            <section class="seccion-legal">
+                <h2 class="titulo-seccion">7. Modificaciones</h2>
+                <div class="contenido-seccion">
+                    <p>Nos reservamos el derecho de modificar estos Términos y Condiciones en cualquier momento. Los cambios entrarán en vigor inmediatamente después de su publicación en el sitio web. El uso continuado del servicio después de dichos cambios constituye su aceptación de los términos modificados.</p>
+                </div>
+            </section>
+            
+            <section class="seccion-legal">
+                <h2 class="titulo-seccion">8. Contacto</h2>
+                <div class="contenido-seccion">
+                    <p><strong>DolarAhora</strong> es un proyecto personal desarrollado con fines informativos. Al ser un servicio gratuito y sin recolección de datos personales, no ofrecemos canales de contacto oficiales.</p>
+                </div>
+            </section>
+            
+            <div class="contenedor-boton">
+                <a href="index.html" class="boton-volver">← Volver al Conversor</a>
+            </div>
+        </main>
+    </div>
+    
+    <script>
+        // Actualizar fecha automáticamente
+        document.getElementById('fechaActual').textContent = new Date().toLocaleDateString('es-ES', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+        });
+    </script>
+</body>
+</html>

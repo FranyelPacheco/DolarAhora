@@ -1,0 +1,790 @@
+/* =================== RESET Y CONFIGURACIÓN BASE =================== */ 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+}
+
+body {
+    background-color: #0A0B0D;
+    color: #EAECEF;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.contenedorPrincipal {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* =================== CONTENEDORES LEGALES =================== */
+.contenedor-legal {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: clamp(30px, 5vw, 40px) clamp(20px, 3vw, 30px);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* =================== ENCABEZADO =================== */
+.encabezadoPrincipal {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #2B3139;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.logo {
+    min-width: 200px;
+}
+
+.logo h1 {
+    font-size: clamp(1.8rem, 4vw, 2.2rem);
+    font-weight: 700;
+    background: linear-gradient(90deg, #EAECEF, #0ECB81);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    letter-spacing: -0.5px;
+    line-height: 1.2;
+}
+
+.resaltadoVerde {
+    color: #0ECB81 !important;
+}
+
+.subtitulo {
+    color: #848E9C;
+    font-size: clamp(0.8rem, 2vw, 0.9rem);
+    margin-top: 5px;
+}
+
+.encabezado-legal {
+    text-align: center;
+    margin-bottom: clamp(40px, 6vw, 50px);
+    padding-bottom: 25px;
+    border-bottom: 1px solid #2B3139;
+}
+
+.encabezado-legal h1 {
+    font-size: clamp(2rem, 5vw, 2.8rem);
+    font-weight: 700;
+    background: linear-gradient(90deg, #EAECEF, #0ECB81);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin-bottom: 15px;
+    letter-spacing: -0.5px;
+    line-height: 1.2;
+}
+
+.subtitulo-legal {
+    color: #848E9C;
+    font-size: clamp(0.95rem, 2vw, 1.1rem);
+    font-weight: 400;
+}
+
+.indicadoresSuperior {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-shrink: 0;
+}
+
+.indicadorTiempo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    font-size: clamp(0.8rem, 2vw, 0.9rem);
+    min-width: 150px;
+}
+
+#horaActual {
+    font-size: clamp(1rem, 3vw, 1.2rem);
+    font-weight: 600;
+    color: #0ECB81;
+    white-space: nowrap;
+}
+
+#fechaActual {
+    color: #848E9C;
+    font-size: clamp(0.75rem, 2vw, 0.85rem);
+    text-align: right;
+    line-height: 1.3;
+}
+
+/* =================== SECCIÓN PRINCIPAL =================== */
+.contenidoPrincipal {
+    margin-bottom: 40px;
+    flex: 1;
+}
+
+.tituloSeccion {
+    font-size: clamp(1.3rem, 4vw, 1.5rem);
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #EAECEF;
+}
+
+.descripcionSeccion {
+    color: #848E9C;
+    font-size: clamp(0.85rem, 2vw, 0.95rem);
+    margin-bottom: 25px;
+}
+
+/* =================== SECCIONES LEGALES =================== */
+.seccion-legal {
+    background: linear-gradient(145deg, #1E2329, #181A20);
+    border: 1px solid #2B3139;
+    border-radius: 12px;
+    padding: clamp(25px, 4vw, 32px);
+    margin-bottom: clamp(20px, 3vw, 25px);
+    transition: all 0.3s ease;
+    animation: desvanecerEntrada 0.5s ease-out;
+}
+
+.seccion-legal:hover {
+    border-color: #3C424A;
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(14, 203, 129, 0.15);
+}
+
+.titulo-seccion {
+    color: #0ECB81;
+    font-size: clamp(1.3rem, 3vw, 1.5rem);
+    margin-bottom: clamp(18px, 3vw, 22px);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.titulo-seccion::before {
+    content: "•";
+    color: #0ECB81;
+    font-size: 2.2rem;
+    line-height: 1;
+}
+
+.contenido-seccion {
+    color: #EAECEF;
+    font-size: clamp(0.95rem, 2vw, 1.05rem);
+}
+
+.contenido-seccion p {
+    margin-bottom: clamp(14px, 2vw, 18px);
+    line-height: 1.7;
+}
+
+.contenido-seccion ul {
+    margin-left: 24px;
+    margin-bottom: clamp(16px, 2vw, 20px);
+}
+
+.contenido-seccion li {
+    margin-bottom: clamp(7px, 1vw, 9px);
+    line-height: 1.6;
+    padding-left: 5px;
+}
+
+/* =================== BLOQUES DESTACADOS LEGALES =================== */
+.bloque-destacado {
+    padding: clamp(18px, 3vw, 22px);
+    border-radius: 10px;
+    margin: clamp(20px, 3vw, 25px) 0;
+    border-left: 4px solid;
+    transition: all 0.3s ease;
+}
+
+.bloque-destacado:hover {
+    transform: translateX(5px);
+}
+
+.bloque-advertencia {
+    background-color: rgba(246, 70, 93, 0.1);
+    border-left-color: #F6465D;
+}
+
+.bloque-informativo {
+    background-color: rgba(14, 203, 129, 0.1);
+    border-left-color: #0ECB81;
+}
+
+.bloque-destacado strong {
+    display: block;
+    margin-bottom: 10px;
+    font-size: clamp(1rem, 2vw, 1.1rem);
+    color: #EAECEF;
+}
+
+/* =================== TARJETAS DE MONEDAS =================== */
+.contenedorTarjetas {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 380px), 1fr));
+    gap: 25px;
+}
+
+.tarjetaMoneda {
+    background: linear-gradient(145deg, #1E2329, #181A20);
+    border-radius: 12px;
+    border: 1px solid #2B3139;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    padding: clamp(20px, 4vw, 25px);
+    display: flex;
+    flex-direction: column;
+    min-height: 380px;
+}
+
+.tarjetaMoneda:hover {
+    border-color: #3C424A;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(14, 203, 129, 0.1);
+}
+
+/* ENCABEZADO DE TARJETA */
+.encabezadoTarjeta {
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #2B3139;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.contenedorSimbolo {
+    width: clamp(45px, 10vw, 50px);
+    height: clamp(45px, 10vw, 50px);
+    min-width: 45px;
+    min-height: 45px;
+    background: linear-gradient(135deg, #0ECB81, #1FD286);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+    flex-shrink: 0;
+}
+
+.simboloMoneda {
+    font-size: clamp(1.5rem, 4vw, 1.8rem);
+    font-weight: 700;
+    color: #FFFFFF;
+    font-family: 'Arial', sans-serif;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.infoMoneda {
+    flex: 1;
+    min-width: 150px;
+}
+
+.nombreMoneda {
+    font-size: clamp(1.1rem, 3vw, 1.2rem);
+    font-weight: 600;
+    color: #EAECEF;
+    margin-bottom: 3px;
+    line-height: 1.3;
+}
+
+.codigoMoneda {
+    font-size: clamp(0.8rem, 2vw, 0.9rem);
+    color: #848E9C;
+}
+
+.estadoActualizacion {
+    margin-left: 10px;
+    flex-shrink: 0;
+}
+
+.etiquetaActualizado {
+    background-color: rgba(14, 203, 129, 0.1);
+    color: #0ECB81;
+    padding: clamp(3px, 1vw, 4px) clamp(8px, 2vw, 10px);
+    border-radius: 20px;
+    font-size: clamp(0.75rem, 2vw, 0.8rem);
+    font-weight: 500;
+    white-space: nowrap;
+    display: inline-block;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* CUERPO DE LA TARJETA */
+.cuerpoTarjeta {
+    margin-bottom: 5px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.valorPrincipal {
+    font-size: clamp(2rem, 5vw, 2.5rem);
+    font-weight: 700;
+    color: #EAECEF;
+    margin-bottom: 20px;
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    line-height: 1.2;
+}
+
+.textoCarga {
+    color: #848E9C;
+    font-size: clamp(1.3rem, 4vw, 1.5rem);
+    font-weight: 400;
+}
+
+/* =================== CALCULADORA =================== */
+.calculadoraMoneda {
+    background-color: rgba(43, 49, 57, 0.3);
+    border-radius: 10px;
+    padding: clamp(15px, 3vw, 20px);
+    margin-top: 15px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.contenedorInputCalculadora {
+    margin-bottom: 15px;
+}
+
+.etiquetaCalculadora {
+    display: block;
+    color: #848E9C;
+    font-size: clamp(0.8rem, 2vw, 0.9rem);
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.grupoInput {
+    display: flex;
+    align-items: center;
+    background-color: #2B3139;
+    border: 1px solid #3C424A;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: border-color 0.3s ease;
+    min-height: 48px;
+}
+
+.grupoInput:focus-within {
+    border-color: #0ECB81;
+}
+
+.inputCalculadora {
+    flex: 1;
+    background: transparent;
+    border: none;
+    color: #EAECEF;
+    font-size: clamp(1rem, 3vw, 1.1rem);
+    font-weight: 500;
+    padding: 12px 15px;
+    outline: none;
+    min-width: 0;
+    width: 100%;
+}
+
+.inputCalculadora::-webkit-inner-spin-button,
+.inputCalculadora::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.monedaInput {
+    background-color: rgba(14, 203, 129, 0.1);
+    color: #0ECB81;
+    padding: clamp(10px, 2vw, 12px) clamp(12px, 2vw, 15px);
+    font-size: clamp(0.8rem, 2vw, 0.9rem);
+    font-weight: 600;
+    border-left: 1px solid #3C424A;
+    white-space: nowrap;
+    min-width: 50px;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.resultadoCalculadora {
+    margin-top: 15px;
+    padding: clamp(12px, 3vw, 15px);
+    background-color: rgba(14, 203, 129, 0.05);
+    border-radius: 8px;
+    border: 1px solid rgba(14, 203, 129, 0.1);
+    flex-shrink: 0;
+}
+
+.textoResultado {
+    font-size: clamp(1.1rem, 4vw, 1.3rem);
+    font-weight: 600;
+    color: #0ECB81;
+    display: block;
+    text-align: center;
+    line-height: 1.3;
+}
+
+.resultadoVerde {
+    color: #0ECB81;
+    font-weight: 700;
+}
+
+/* =================== MEJORAS PARA INPUTS =================== */
+.grupoInput:focus-within {
+    border-color: #0ECB81;
+    box-shadow: 0 0 0 2px rgba(14, 203, 129, 0.2);
+}
+
+.inputCalculadora {
+    user-select: text;
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+}
+
+.inputCalculadora[data-valor-temporal="vacio"] {
+    color: #848E9C;
+}
+
+.textoError {
+    color: #F6465D;
+    font-weight: 500;
+}
+
+.textoResultado {
+    transition: all 0.3s ease;
+    min-height: 1.5em;
+}
+
+/* =================== BOTONES Y ENLACES LEGALES =================== */
+.contenedor-boton {
+    text-align: center;
+    margin-top: clamp(35px, 5vw, 45px);
+    padding-top: 20px;
+    border-top: 1px solid #2B3139;
+}
+
+.boton-volver {
+    display: inline-flex;
+    align-items: center;
+    gap: clamp(10px, 2vw, 12px);
+    background: linear-gradient(135deg, rgba(14, 203, 129, 0.15), rgba(14, 203, 129, 0.1));
+    color: #0ECB81;
+    padding: clamp(14px, 2vw, 16px) clamp(25px, 4vw, 32px);
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 600;
+    border: 1px solid rgba(14, 203, 129, 0.25);
+    transition: all 0.3s ease;
+    font-size: clamp(0.95rem, 2vw, 1.05rem);
+    white-space: nowrap;
+}
+
+.boton-volver:hover {
+    background: linear-gradient(135deg, rgba(14, 203, 129, 0.25), rgba(14, 203, 129, 0.2));
+    border-color: rgba(14, 203, 129, 0.4);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(14, 203, 129, 0.2);
+}
+
+/* =================== AVISO LEGAL (FOOTER) =================== */
+.aviso-legal {
+    background-color: rgba(246, 70, 93, 0.08);
+    border: 1px solid rgba(246, 70, 93, 0.15);
+    border-radius: 12px;
+    padding: clamp(15px, 3vw, 18px);
+    margin-top: 25px;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.aviso-legal:hover {
+    border-color: rgba(246, 70, 93, 0.25);
+    transform: translateY(-2px);
+}
+
+.texto-aviso {
+    color: #EAECEF;
+    line-height: 1.6;
+    text-align: center;
+}
+
+.texto-aviso a {
+    color: #0ECB81;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    padding: 0 5px;
+}
+
+.texto-aviso a:hover {
+    text-decoration: underline;
+    color: #1FD286;
+}
+
+/* =================== PIE DE PÁGINA =================== */
+.piePagina {
+    padding: 25px 0;
+    border-top: 1px solid #2B3139;
+    margin-top: 30px;
+    flex-shrink: 0;
+}
+
+.contenedorPie {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.textoPie {
+    color: #848E9C;
+    font-size: clamp(0.75rem, 2vw, 0.85rem);
+    line-height: 1.4;
+}
+
+/* =================== RESPONSIVE ESPECÍFICO =================== */
+@media (max-width: 768px) {
+    .encabezadoPrincipal {
+        flex-direction: column;
+        align-items: stretch;
+        text-align: center;
+        gap: 15px;
+    }
+    
+    .logo {
+        min-width: auto;
+        text-align: center;
+    }
+    
+    .indicadoresSuperior {
+        justify-content: center;
+        width: 100%;
+    }
+    
+    .indicadorTiempo {
+        align-items: center;
+        min-width: auto;
+    }
+    
+    #fechaActual {
+        text-align: center;
+    }
+    
+    .encabezadoTarjeta {
+        justify-content: space-between;
+        gap: 10px;
+    }
+    
+    .contenedorSimbolo {
+        margin-right: 10px;
+    }
+    
+    .estadoActualizacion {
+        margin-left: 0;
+        width: 100%;
+        text-align: center;
+        margin-top: 10px;
+    }
+    
+    /* Responsive Legal */
+    .contenedor-legal {
+        padding: 25px 18px;
+    }
+    
+    .encabezado-legal {
+        margin-bottom: 35px;
+    }
+    
+    .seccion-legal {
+        padding: 22px;
+        margin-bottom: 20px;
+    }
+    
+    .titulo-seccion {
+        font-size: 1.35rem;
+        margin-bottom: 18px;
+    }
+    
+    .boton-volver {
+        width: 100%;
+        justify-content: center;
+        padding: 16px;
+    }
+    
+    .aviso-legal {
+        padding: 16px;
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .contenedorPrincipal {
+        padding: 15px;
+    }
+    
+    .tarjetaMoneda {
+        min-height: 350px;
+    }
+    
+    .encabezadoTarjeta {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+    
+    .contenedorSimbolo {
+        align-self: center;
+        margin-right: 0;
+    }
+    
+    .infoMoneda {
+        min-width: auto;
+        width: 100%;
+        text-align: center;
+    }
+    
+    .estadoActualizacion {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .grupoInput {
+        flex-direction: column;
+        align-items: stretch;
+        border-radius: 8px;
+        overflow: visible;
+    }
+    
+    .inputCalculadora {
+        border-bottom: 1px solid #3C424A;
+        border-radius: 8px 8px 0 0;
+    }
+    
+    .monedaInput {
+        border-left: none;
+        border-top: 1px solid #3C424A;
+        border-radius: 0 0 8px 8px;
+        padding: 10px;
+        min-width: auto;
+    }
+    
+    .contenedorPie {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+    
+    /* Responsive Legal Mobile */
+    .contenedor-legal {
+        padding: 20px 15px;
+    }
+    
+    .encabezado-legal h1 {
+        font-size: 2.2rem;
+    }
+    
+    .seccion-legal {
+        padding: 20px 18px;
+    }
+    
+    .titulo-seccion {
+        font-size: 1.25rem;
+        gap: 8px;
+    }
+    
+    .titulo-seccion::before {
+        font-size: 1.8rem;
+    }
+    
+    .contenido-seccion {
+        font-size: 1rem;
+    }
+    
+    .bloque-destacado {
+        padding: 18px 16px;
+    }
+}
+
+@media (max-width: 360px) {
+    .contenedorPrincipal {
+        padding: 10px;
+    }
+    
+    .tarjetaMoneda {
+        padding: 15px;
+    }
+    
+    .valorPrincipal {
+        font-size: 1.8rem;
+    }
+    
+    .simboloMoneda {
+        font-size: 1.4rem;
+    }
+}
+
+/* =================== ANIMACIONES =================== */
+@keyframes parpadeoVerde {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+}
+
+.actualizando {
+    animation: parpadeoVerde 1.5s infinite;
+}
+
+@keyframes desvanecerEntrada {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.tarjetaMoneda {
+    animation: desvanecerEntrada 0.5s ease-out;
+}
+
+@keyframes resaltarActualizacion {
+    0% { background-color: rgba(14, 203, 129, 0.1); }
+    50% { background-color: rgba(14, 203, 129, 0.3); }
+    100% { background-color: rgba(14, 203, 129, 0.1); }
+}
+
+.resaltar {
+    animation: resaltarActualizacion 1s ease;
+}
+
+@keyframes brilloSuave {
+    0%, 100% { 
+        box-shadow: 0 8px 25px rgba(14, 203, 129, 0.1);
+    }
+    50% { 
+        box-shadow: 0 12px 30px rgba(14, 203, 129, 0.15);
+    }
+}
+
+.seccion-legal:hover {
+    animation: brilloSuave 2s infinite;
+}
+
+/* Animación escalonada para secciones legales */
+.seccion-legal:nth-child(1) { animation-delay: 0.1s; }
+.seccion-legal:nth-child(2) { animation-delay: 0.2s; }
+.seccion-legal:nth-child(3) { animation-delay: 0.3s; }
+.seccion-legal:nth-child(4) { animation-delay: 0.4s; }
+.seccion-legal:nth-child(5) { animation-delay: 0.5s; }
+.seccion-legal:nth-child(6) { animation-delay: 0.6s; }
+.seccion-legal:nth-child(7) { animation-delay: 0.7s; }
+.seccion-legal:nth-child(8) { animation-delay: 0.8s; }
+.seccion-legal:nth-child(9) { animation-delay: 0.9s; }

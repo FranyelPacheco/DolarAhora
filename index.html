@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" type="image/x-icon" href="logo.svg">
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Cotización del Dólar - Euro - USDT</title>
+</head>
+<body onload="inicializarCotizaciones();">
+    <div class="contenedorPrincipal">
+        <!-- Encabezado -->
+        <header class="encabezadoPrincipal">
+            <div class="logo">
+                <h1><span class="resaltadoVerde">Dólar</span>Ahora</h1>
+                <p class="subtitulo">Cotizaciones en tiempo real</p>
+            </div>
+            <div class="indicadoresSuperior">
+                <div class="indicadorTiempo">
+                    <span id="horaActual"></span>
+                    <span id="fechaActual"></span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Sección principal -->
+        <main class="contenidoPrincipal">
+            <section class="seccionCotizaciones">
+                <h2 class="tituloSeccion">Cotizaciones Actuales</h2>
+                <p class="descripcionSeccion">Valores en Bolívares (VES)</p>
+                
+                <div class="contenedorTarjetas">
+                    <!-- Tarjeta USDT -->
+                    <article class="tarjetaMoneda" id="tarjetaUSDT">
+                        <div class="encabezadoTarjeta">
+                            <div class="contenedorSimbolo">
+                                <span class="simboloMoneda">₮</span>
+                            </div>
+                            <div class="infoMoneda">
+                                <h3 class="nombreMoneda">Tether USDT</h3>
+                                <p class="codigoMoneda">USDT/VES</p>
+                            </div>
+                            <div class="estadoActualizacion">
+                                <span class="etiquetaActualizado" id="estadoUSDT">Cargando...</span>
+                            </div>
+                        </div>
+                        
+                        <div class="cuerpoTarjeta">
+                            <div class="valorPrincipal" id="valorUSDT">
+                                <span class="textoCarga">Cargando...</span>
+                            </div>
+                            
+                            <!-- Calculadora para USDT -->
+                            <div class="calculadoraMoneda">
+                                <div class="contenedorInputCalculadora">
+                                    <label for="inputUSDT" class="etiquetaCalculadora">Cantidad de USDT:</label>
+                                    <div class="grupoInput">
+                                        <input type="text" 
+                                               id="inputUSDT" 
+                                               class="inputCalculadora" 
+                                               value="1">
+                                        <span class="monedaInput">USDT</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="resultadoCalculadora">
+                                    <span class="textoResultado" id="resultadoUSDT">Ingrese un valor</span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Tarjeta Dólar -->
+                    <article class="tarjetaMoneda" id="tarjetaDolar">
+                        <div class="encabezadoTarjeta">
+                            <div class="contenedorSimbolo">
+                                <span class="simboloMoneda">$</span>
+                            </div>
+                            <div class="infoMoneda">
+                                <h3 class="nombreMoneda">Dólar Estadounidense</h3>
+                                <p class="codigoMoneda">USD/VES</p>
+                            </div>
+                            <div class="estadoActualizacion">
+                                <span class="etiquetaActualizado" id="estadoDolar">Cargando...</span>
+                            </div>
+                        </div>
+                        
+                        <div class="cuerpoTarjeta">
+                            <div class="valorPrincipal" id="valorDolar">
+                                <span class="textoCarga">Cargando...</span>
+                            </div>
+                            
+                            <!-- Calculadora para Dólar -->
+                            <div class="calculadoraMoneda">
+                                <div class="contenedorInputCalculadora">
+                                    <label for="inputDolar" class="etiquetaCalculadora">Cantidad de USD:</label>
+                                    <div class="grupoInput">
+                                        <input type="text" 
+                                               id="inputDolar" 
+                                               class="inputCalculadora" 
+                                               value="1">
+                                        <span class="monedaInput">USD</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="resultadoCalculadora">
+                                    <span class="textoResultado" id="resultadoDolar">Ingrese un valor</span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Tarjeta Euro -->
+                    <article class="tarjetaMoneda" id="tarjetaEuro">
+                        <div class="encabezadoTarjeta">
+                            <div class="contenedorSimbolo">
+                                <span class="simboloMoneda">€</span>
+                            </div>
+                            <div class="infoMoneda">
+                                <h3 class="nombreMoneda">Euro</h3>
+                                <p class="codigoMoneda">EUR/VES</p>
+                            </div>
+                            <div class="estadoActualizacion">
+                                <span class="etiquetaActualizado" id="estadoEuro">Cargando...</span>
+                            </div>
+                        </div>
+                        
+                        <div class="cuerpoTarjeta">
+                            <div class="valorPrincipal" id="valorEuro">
+                                <span class="textoCarga">Cargando...</span>
+                            </div>
+                            
+                            <!-- Calculadora para Euro -->
+                            <div class="calculadoraMoneda">
+                                <div class="contenedorInputCalculadora">
+                                    <label for="inputEuro" class="etiquetaCalculadora">Cantidad de EUR:</label>
+                                    <div class="grupoInput">
+                                        <input type="text" 
+                                               id="inputEuro" 
+                                               class="inputCalculadora" 
+                                               value="1">
+                                        <span class="monedaInput">EUR</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="resultadoCalculadora">
+                                    <span class="textoResultado" id="resultadoEuro">Ingrese un valor</span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+        </main>
+
+        <!-- Pie de página -->
+        <footer class="piePagina">
+            <div class="aviso-legal">
+                <p class="texto-aviso">
+                    <strong>Descargo de Responsabilidad:</strong> DolarAhora es una herramienta informativa. Los valores mostrados son estimaciones basadas en APIs de terceros y pueden no reflejar valores exactos de mercado. No ofrecemos asesoría financiera ni garantizamos la exactitud de la información. Utilice bajo su propia responsabilidad.
+                </p>
+                <br>
+                <p class="texto-aviso"><strong>Información para Venezuela:</strong> Las tasas mostradas son estimaciones del mercado y pueden diferir de las tasas oficiales establecidas por el Banco Central de Venezuela. Este servicio es únicamente informativo y no constituye una oferta para realizar transacciones.
+                <br><br>
+                <a href="terminos.html">Términos y Condiciones</a> | 
+                <a href="privacidad.html">Política de Privacidad</a></p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
