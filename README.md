@@ -30,14 +30,16 @@ Puedes ver la aplicación en funcionamiento aquí: **[Añade el enlace a tu GitH
     -   [Exchange Rate API](https://open.er-api.com/): Para obtener las tasas de cambio oficiales de USD y EUR a VES.
 
 ## 📁 Estructura del Proyecto
-/
-├── index.html # Página principal con las cotizaciones y calculadoras
-├── terminos.html # Página de Términos y Condiciones
-├── privacidad.html # Página de Política de Privacidad
-├── style.css # Hoja de estilos principal
-├── script.js # Lógica de la aplicación (APIs, cálculos, UI)
-└── logo.svg # Favicon del sitio (debes añadir tu propio archivo)
 
+```text
+📁 DolarAhora/
+├── 📄 index.html        # Página principal y calculadora
+├── 📄 privacidad.html   # Política de privacidad
+├── 📄 terminos.html     # Términos y condiciones de uso
+├── 📄 style.css         # Hoja de estilos global
+├── 📄 script.js         # Lógica principal y conexión a APIs
+└── 🖼️ logo.svg          # Logo vectorial de la aplicación
+```
 
 ## ⚙️ Instalación y Uso Local
 
@@ -47,10 +49,10 @@ Sigue estos pasos para ejecutar el proyecto en tu máquina local.
     ```bash
     git clone https://github.com/tu-usuario/dolarahora.git
 
-Navega al directorio del proyecto:
-
-bash
-cd dolarahora
+2. Navega al directorio del proyecto:
+ **Clona el repositorio:**
+    ```bash
+    cd dolarahora
 Abre el archivo index.html en tu navegador.
 Simplemente haz doble clic en el archivo o utiliza una extensión como "Live Server" de VS Code para una mejor experiencia de desarrollo.
 
@@ -59,7 +61,7 @@ Nota: Asegúrate de tener una conexión a internet para que las APIs funcionen c
 🔧 Personalización
 Puedes modificar la frecuencia de actualización de las cotizaciones editando los intervalos en script.js.
 
-javascript
+```code
 // Actualizar USDT cada 10 minutos (600000 ms)
 setInterval(() => {
     precioUSDTsimple();
@@ -70,6 +72,7 @@ setInterval(() => {
     buscarDolar();
     buscarEuro();
 }, 1000 * 60 * 60);
+```
 📝 Aviso Legal
 DolarAhora es una herramienta meramente informativa. Las cotizaciones mostradas son estimaciones basadas en datos de APIs de terceros y pueden no reflejar el valor exacto de mercado en el momento de la transacción. No ofrecemos asesoría financiera ni nos responsabilizamos por decisiones tomadas en base a la información aquí presentada. Para más detalles, consulta nuestras páginas de Términos y Condiciones y Política de Privacidad.
 
