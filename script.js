@@ -100,34 +100,12 @@ async function precioUSDTsimple() {
         estadoElemento.textContent = 'Actualizando...';
         estadoElemento.classList.add('actualizando');
         
-        const respuesta = await fetch("https://p2p.binance.com/bapi/c2c/v2/friendly/c2c/adv/search", {
-            method: 'POST',
-            headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify({
-                asset: "USDT",
-                fiat: "VES",
-                page: 20,
-                rows: 5,
-                tradeType: "BUY"
-            })
-        });
-        
+        const respuesta = await fetch('/api/usdt');
+        if (!respuesta.ok) throw new Error(`HTTP ${respuesta.status}`);
         const datos = await respuesta.json();
 
-        if (datos.data && datos.data.length > 0) {
-            let sumaPrecios = 0;
-            let contador = 0;
-            
-            for (let i = 0; i < Math.min(10, datos.data.length); i++) {
-                const precioStr = datos.data[i].adv?.price;
-                if (precioStr) {
-                    const precioNum = parseFloat(precioStr);
-                    sumaPrecios += precioNum;
-                    contador++;
-                }
-            }
-            
-            const precioPromedio = contador > 0 ? sumaPrecios / contador : 0;
+        {
+            const precioPromedio = datos.precio || 0;
             tasasActuales.USDT = precioPromedio;
             
             if (precioPromedio > 0 && valorElemento) {
@@ -180,7 +158,7 @@ async function buscarDolar() {
                 minute: '2-digit' 
             });
             
-            valorElemento.innerHTML = `<span class="valorNumero">${tasaDolar}</span> <span class="valorMoneda">Bs</span>`;
+            valorElemento.innerHTML = `<span class="valorNumero">${tasaDolar.toFixed(2)}</span> <span class="valorMoneda">Bs</span>`;
             estadoElemento.textContent = `Actualizado: ${horaActualizacion}`;
             estadoElemento.classList.remove('actualizando');
             estadoElemento.classList.add('resaltar');
@@ -222,7 +200,7 @@ async function buscarEuro() {
                 minute: '2-digit' 
             });
             
-            valorElemento.innerHTML = `<span class="valorNumero">${tasaEuro}</span> <span class="valorMoneda">Bs</span>`;
+            valorElemento.innerHTML = `<span class="valorNumero">${tasaEuro.toFixed(2)}</span> <span class="valorMoneda">Bs</span>`;
             estadoElemento.textContent = `Actualizado: ${horaActualizacion}`;
             estadoElemento.classList.remove('actualizando');
             estadoElemento.classList.add('resaltar');
