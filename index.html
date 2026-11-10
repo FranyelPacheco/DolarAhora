@@ -30,14 +30,11 @@
             <p class="descripcionSeccion">Valores en bolívares (VES)</p>
             <div class="contenedorTarjetas">
                 <article class="tarjetaMoneda" id="tarjetaUSDT">
-                    <div class="encabezadoTarjeta">
-                        <span class="simboloMoneda">₮</span>
-                        <div class="infoMoneda">
-                            <h3 class="nombreMoneda">Tether USDT</h3>
-                            <p class="codigoMoneda">USDT/VES · Binance P2P</p>
-                        </div>
-                        <span class="etiquetaActualizado" id="estadoUSDT">Cargando...</span>
-                    </div>
+                    <div class="fondoTarjeta" aria-hidden="true"><span class="brillo"></span><span class="orbe orbeA"></span><span class="orbe orbeB"></span><span class="barrido"></span></div>
+                    <span class="etiquetaActualizado" id="estadoUSDT">Cargando...</span>
+                    <div class="iconoMoneda"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M7.5 8h9"/><path d="M12 8v9"/><path d="M8 12.2c0 .9 1.8 1.5 4 1.5s4-.6 4-1.5-1.8-1.5-4-1.5-4 .6-4 1.5z"/></svg></span></div>
+                    <h3 class="nombreMoneda">Tether USDT</h3>
+                    <p class="codigoMoneda">USDT/VES · Binance P2P</p>
                     <div class="valorPrincipal" id="valorUSDT"><span class="textoCarga">Cargando...</span></div>
                     <div class="calculadoraMoneda">
                         <label for="inputUSDT" class="etiquetaCalculadora">Convertir USDT a bolívares</label>
@@ -49,14 +46,11 @@
                     </div>
                 </article>
                 <article class="tarjetaMoneda" id="tarjetaDolar">
-                    <div class="encabezadoTarjeta">
-                        <span class="simboloMoneda">$</span>
-                        <div class="infoMoneda">
-                            <h3 class="nombreMoneda">Dólar estadounidense</h3>
-                            <p class="codigoMoneda">USD/VES</p>
-                        </div>
-                        <span class="etiquetaActualizado" id="estadoDolar">Cargando...</span>
-                    </div>
+                    <div class="fondoTarjeta" aria-hidden="true"><span class="brillo"></span><span class="orbe orbeA"></span><span class="orbe orbeB"></span><span class="barrido"></span></div>
+                    <span class="etiquetaActualizado" id="estadoDolar">Cargando...</span>
+                    <div class="iconoMoneda"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"/><path d="M12 18V6"/></svg></span></div>
+                    <h3 class="nombreMoneda">Dólar estadounidense</h3>
+                    <p class="codigoMoneda">USD/VES</p>
                     <div class="valorPrincipal" id="valorDolar"><span class="textoCarga">Cargando...</span></div>
                     <div class="calculadoraMoneda">
                         <label for="inputDolar" class="etiquetaCalculadora">Convertir USD a bolívares</label>
@@ -68,14 +62,11 @@
                     </div>
                 </article>
                 <article class="tarjetaMoneda" id="tarjetaEuro">
-                    <div class="encabezadoTarjeta">
-                        <span class="simboloMoneda">€</span>
-                        <div class="infoMoneda">
-                            <h3 class="nombreMoneda">Euro</h3>
-                            <p class="codigoMoneda">EUR/VES</p>
-                        </div>
-                        <span class="etiquetaActualizado" id="estadoEuro">Cargando...</span>
-                    </div>
+                    <div class="fondoTarjeta" aria-hidden="true"><span class="brillo"></span><span class="orbe orbeA"></span><span class="orbe orbeB"></span><span class="barrido"></span></div>
+                    <span class="etiquetaActualizado" id="estadoEuro">Cargando...</span>
+                    <div class="iconoMoneda"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M7 12h5"/><path d="M15 9.4a4 4 0 1 0 0 5.2"/></svg></span></div>
+                    <h3 class="nombreMoneda">Euro</h3>
+                    <p class="codigoMoneda">EUR/VES</p>
                     <div class="valorPrincipal" id="valorEuro"><span class="textoCarga">Cargando...</span></div>
                     <div class="calculadoraMoneda">
                         <label for="inputEuro" class="etiquetaCalculadora">Convertir EUR a bolívares</label>
@@ -88,19 +79,25 @@
                 </article>
             </div>
         </main>
-
-        <!-- Pie de página -->
-        <footer class="piePagina">
-            <div class="aviso-legal">
-                <p class="texto-aviso">
-                    <strong>Descargo de Responsabilidad:</strong> DolarAhora es una herramienta informativa. Los valores mostrados son estimaciones basadas en APIs de terceros y pueden no reflejar valores exactos de mercado. No ofrecemos asesoría financiera ni garantizamos la exactitud de la información. Utilice bajo su propia responsabilidad.
-                </p>
-                <p class="texto-aviso"><strong>Información para Venezuela:</strong> Las tasas mostradas son estimaciones del mercado y pueden diferir de las tasas oficiales establecidas por el Banco Central de Venezuela. Este servicio es únicamente informativo y no constituye una oferta para realizar transacciones.
-                <br><br>
-                <a href="terminos.html">Términos y Condiciones</a> | 
-                <a href="privacidad.html">Política de Privacidad</a></p>
-            </div>
-        </footer>
     </div>
+    <footer class="piePagina">
+        <div class="pieContenido">
+            <a class="pieMarca" href="/"><img src="logo.svg" alt="" width="44" height="44"><span><span class="resaltadoVerde">Dólar</span>Ahora</span></a>
+            <p class="pieDescripcion">Cotizaciones del dólar, euro y USDT en bolívares, en tiempo real y con calculadora integrada.</p>
+            <nav class="pieEnlaces">
+                <a href="terminos.html">Términos y Condiciones</a>
+                <span></span>
+                <a href="privacidad.html">Política de Privacidad</a>
+            </nav>
+        </div>
+        <div class="pieInferior">
+            <div class="pieInferiorContenido">
+                <p class="texto-aviso"><strong>Descargo de Responsabilidad:</strong> DolarAhora es una herramienta informativa. Los valores mostrados son estimaciones basadas en APIs de terceros y pueden no reflejar valores exactos de mercado. No ofrecemos asesoría financiera ni garantizamos la exactitud de la información. Utilice bajo su propia responsabilidad.</p>
+                <p class="texto-aviso"><strong>Información para Venezuela:</strong> Las tasas mostradas son estimaciones del mercado y pueden diferir de las tasas oficiales establecidas por el Banco Central de Venezuela. Este servicio es únicamente informativo y no constituye una oferta para realizar transacciones.</p>
+                <p class="pieCopyright">© <span id="anioActual">2026</span> <a href="/">DolarAhora</a>. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+    <script>document.getElementById('anioActual').textContent = new Date().getFullYear();</script>
 </body>
 </html>

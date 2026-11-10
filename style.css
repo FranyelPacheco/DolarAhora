@@ -75,6 +75,10 @@ body {
 }
 
 .indicadorTiempo {
+    padding: 8px 16px;
+    background: rgba(14, 203, 129, 0.06);
+    border: 1px solid rgba(14, 203, 129, 0.16);
+    border-radius: 14px;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
@@ -96,6 +100,8 @@ body {
 /* =================== SECCIÓN PRINCIPAL =================== */
 .contenidoPrincipal { flex: 1; }
 
+.tituloSeccion, .descripcionSeccion { text-align: center; }
+
 .tituloSeccion {
     font-size: 1.4rem;
     font-weight: 700;
@@ -103,6 +109,7 @@ body {
 }
 
 .descripcionSeccion {
+    margin-bottom: 28px;
     color: var(--texto-suave);
     font-size: 0.9rem;
     margin: 4px 0 22px;
@@ -111,18 +118,23 @@ body {
 .contenedorTarjetas {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
-    gap: 20px;
+    gap: 24px;
 }
 
 .tarjetaMoneda {
-    background: linear-gradient(160deg, var(--superficie-2), var(--superficie));
-    border: 1px solid var(--borde);
-    border-radius: var(--radio);
-    padding: 22px;
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
     display: flex;
     flex-direction: column;
-    gap: 18px;
-    transition: border-color 0.2s, transform 0.2s;
+    align-items: center;
+    text-align: center;
+    padding: 34px 26px 26px;
+    background: linear-gradient(135deg, #0D1217, var(--superficie) 50%, #0D1217);
+    border: 1px solid rgba(14, 203, 129, 0.14);
+    border-radius: 22px;
+    box-shadow: 0 24px 50px -24px rgba(0, 0, 0, 0.8);
+    transition: border-color 0.4s, transform 0.4s, box-shadow 0.4s;
     animation: desvanecerEntrada 0.4s ease-out both;
 }
 
@@ -131,52 +143,113 @@ body {
 
 .tarjetaMoneda:hover {
     border-color: rgba(14, 203, 129, 0.45);
-    transform: translateY(-2px);
+    transform: translateY(-4px);
+    box-shadow: 0 28px 60px -22px rgba(14, 203, 129, 0.25);
 }
 
-.encabezadoTarjeta {
-    display: flex;
-    align-items: center;
-    gap: 12px;
+.tarjetaMoneda > * { position: relative; z-index: 1; }
+
+.fondoTarjeta {
+    position: absolute !important;
+    inset: 0;
+    z-index: 0 !important;
+    pointer-events: none;
+    overflow: hidden;
 }
 
-.simboloMoneda {
-    width: 42px;
-    height: 42px;
-    flex-shrink: 0;
+.fondoTarjeta .brillo {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top right, rgba(14, 203, 129, 0.05), rgba(14, 203, 129, 0.1));
+    opacity: 0.5;
+    transition: opacity 0.5s;
+}
+
+.tarjetaMoneda:hover .brillo { opacity: 1; }
+
+.fondoTarjeta .orbe {
+    position: absolute;
+    border-radius: 50%;
+    background: var(--verde);
+    filter: blur(60px);
+    opacity: 0.14;
+    transition: opacity 0.7s, transform 0.7s;
+}
+
+.fondoTarjeta .orbeA { width: 190px; height: 190px; bottom: -80px; left: -80px; }
+.fondoTarjeta .orbeB { width: 90px; height: 90px; top: -30px; right: -20px; opacity: 0.1; }
+
+.tarjetaMoneda:hover .orbeA { opacity: 0.26; transform: scale(1.15); }
+
+.fondoTarjeta .barrido {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, transparent, rgba(14, 203, 129, 0.08), transparent);
+    transform: translateX(120%) skewX(-12deg);
+    transition: transform 1s;
+}
+
+.tarjetaMoneda:hover .barrido { transform: translateX(-120%) skewX(-12deg); }
+
+.etiquetaActualizado {
+    position: absolute !important;
+    top: 14px;
+    right: 14px;
+    background: rgba(14, 203, 129, 0.1);
+    color: var(--verde);
+    padding: 4px 10px;
+    border-radius: 999px;
+    font-size: 0.7rem;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.iconoMoneda {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.iconoMoneda::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    border: 2px solid rgba(14, 203, 129, 0.3);
+    animation: anilloPulso 2.6s ease-out infinite;
+}
+
+.iconoMoneda span {
     display: grid;
     place-items: center;
-    font-size: 1.35rem;
-    font-weight: 700;
+    width: 76px;
+    height: 76px;
+    border-radius: 50%;
     color: var(--verde);
-    background: rgba(14, 203, 129, 0.12);
-    border-radius: 12px;
+    background: linear-gradient(135deg, rgba(14, 203, 129, 0.16), rgba(14, 203, 129, 0.04));
+    border: 1px solid rgba(14, 203, 129, 0.35);
+    box-shadow: 0 10px 30px -10px rgba(14, 203, 129, 0.45);
+    transition: transform 0.5s;
 }
 
-.infoMoneda { flex: 1; min-width: 0; }
+.iconoMoneda svg { width: 36px; height: 36px; transition: transform 0.7s; }
+
+.tarjetaMoneda:hover .iconoMoneda span { transform: scale(1.08) rotate(8deg); }
+.tarjetaMoneda:hover .iconoMoneda svg { transform: rotate(-8deg); }
 
 .nombreMoneda {
-    font-size: 1rem;
-    font-weight: 600;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    font-size: 1.35rem;
+    font-weight: 700;
+    letter-spacing: -0.3px;
+    background: linear-gradient(90deg, var(--texto), #fff, var(--texto));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
 }
 
 .codigoMoneda {
     font-size: 0.78rem;
     color: var(--texto-suave);
-    margin-top: 2px;
-}
-
-.etiquetaActualizado {
-    background: rgba(14, 203, 129, 0.1);
-    color: var(--verde);
-    padding: 4px 10px;
-    border-radius: 999px;
-    font-size: 0.72rem;
-    font-weight: 500;
-    white-space: nowrap;
+    margin: 4px 0 18px;
 }
 
 .valorPrincipal {
@@ -185,7 +258,22 @@ body {
     letter-spacing: -1px;
     font-variant-numeric: tabular-nums;
     line-height: 1.1;
+    min-height: 1.1em;
+    margin-bottom: 22px;
 }
+
+.valorPrincipal::after {
+    content: "";
+    display: block;
+    width: 34%;
+    height: 2px;
+    margin: 18px auto 0;
+    border-radius: 2px;
+    background: linear-gradient(90deg, transparent, var(--verde), transparent);
+    transition: width 0.5s;
+}
+
+.tarjetaMoneda:hover .valorPrincipal::after { width: 55%; }
 
 .valorMoneda {
     font-size: 1rem;
@@ -208,9 +296,11 @@ body {
 
 /* =================== CALCULADORA =================== */
 .calculadoraMoneda {
+    width: 100%;
     margin-top: auto;
     padding-top: 18px;
-    border-top: 1px solid var(--borde);
+    border-top: 1px solid rgba(14, 203, 129, 0.14);
+    text-align: left;
 }
 
 .etiquetaCalculadora {
@@ -273,35 +363,97 @@ body {
     font-weight: 700;
 }
 
-/* =================== PIE =================== */
-.piePagina { margin-top: 36px; }
+.piePagina {
+    margin-top: 64px;
+    width: 100%;
+    background: linear-gradient(180deg, var(--fondo) 0%, #0C2019 100%);
+    border-top: 1px solid rgba(14, 203, 129, 0.18);
+}
 
-.aviso-legal {
-    background: rgba(246, 70, 93, 0.06);
-    border: 1px solid rgba(246, 70, 93, 0.14);
+.pieContenido {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 56px 20px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+    text-align: center;
+}
+
+.pieMarca {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: var(--texto);
+    font-size: 1.4rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+.pieMarca img {
     border-radius: 12px;
-    padding: 16px 18px;
+    box-shadow: 0 6px 18px rgba(14, 203, 129, 0.25);
+}
+
+.pieDescripcion {
+    max-width: 520px;
+    color: var(--texto-suave);
+    font-size: 0.9rem;
+    line-height: 1.7;
+}
+
+.pieEnlaces {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.pieEnlaces a {
+    color: var(--texto);
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.pieEnlaces a:hover { color: var(--verde); }
+
+.pieEnlaces span {
+    width: 1px;
+    height: 14px;
+    background: var(--borde);
+}
+
+.pieInferior {
+    border-top: 1px solid rgba(14, 203, 129, 0.14);
+}
+
+.pieInferiorContenido {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 22px 20px 28px;
     display: grid;
     gap: 10px;
+    text-align: center;
 }
 
 .texto-aviso {
     color: var(--texto-suave);
-    font-size: 0.78rem;
+    font-size: 0.75rem;
     line-height: 1.6;
-    text-align: center;
 }
 
-.texto-aviso strong { color: var(--texto); }
+.texto-aviso strong { color: var(--texto); font-weight: 600; }
 
-.texto-aviso a {
-    color: var(--verde);
-    text-decoration: none;
-    font-weight: 600;
-    padding: 0 6px;
+.pieCopyright {
+    color: var(--texto);
+    font-size: 0.82rem;
+    margin-top: 4px;
 }
 
-.texto-aviso a:hover { text-decoration: underline; }
+.pieCopyright a { color: var(--verde); text-decoration: none; font-weight: 600; }
 
 /* =================== PÁGINAS LEGALES =================== */
 .contenedor-legal {
@@ -333,9 +485,9 @@ body {
 }
 
 .seccion-legal {
-    background: linear-gradient(160deg, var(--superficie-2), var(--superficie));
-    border: 1px solid var(--borde);
-    border-radius: var(--radio);
+    background: linear-gradient(135deg, #0D1217, var(--superficie) 50%, #0D1217);
+    border: 1px solid rgba(14, 203, 129, 0.14);
+    border-radius: 22px;
     padding: clamp(20px, 4vw, 30px);
     margin-bottom: 20px;
     animation: desvanecerEntrada 0.4s ease-out both;
@@ -422,6 +574,11 @@ body {
 
 .actualizando { animation: parpadeoVerde 1.5s infinite; }
 
+@keyframes anilloPulso {
+    0% { transform: scale(1); opacity: 0.8; }
+    80%, 100% { transform: scale(1.5); opacity: 0; }
+}
+
 @keyframes desvanecerEntrada {
     from { opacity: 0; transform: translateY(10px); }
     to { opacity: 1; transform: translateY(0); }
@@ -449,7 +606,9 @@ body {
 
     .indicadorTiempo { align-items: flex-start; }
 
-    .tarjetaMoneda { padding: 18px; }
+    .tarjetaMoneda { padding: 30px 18px 20px; }
+
+    .pieContenido { padding: 44px 16px 32px; }
 
     .boton-volver { width: 100%; justify-content: center; }
 }

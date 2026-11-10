@@ -107,7 +107,25 @@
             </div>
         </main>
     </div>
-    
+    <footer class="piePagina">
+        <div class="pieContenido">
+            <a class="pieMarca" href="/"><img src="logo.svg" alt="" width="44" height="44"><span><span class="resaltadoVerde">Dólar</span>Ahora</span></a>
+            <p class="pieDescripcion">Cotizaciones del dólar, euro y USDT en bolívares, en tiempo real y con calculadora integrada.</p>
+            <nav class="pieEnlaces">
+                <a href="terminos.html">Términos y Condiciones</a>
+                <span></span>
+                <a href="privacidad.html">Política de Privacidad</a>
+            </nav>
+        </div>
+        <div class="pieInferior">
+            <div class="pieInferiorContenido">
+                <p class="texto-aviso"><strong>Descargo de Responsabilidad:</strong> DolarAhora es una herramienta informativa. Los valores mostrados son estimaciones basadas en APIs de terceros y pueden no reflejar valores exactos de mercado. No ofrecemos asesoría financiera ni garantizamos la exactitud de la información. Utilice bajo su propia responsabilidad.</p>
+                <p class="texto-aviso"><strong>Información para Venezuela:</strong> Las tasas mostradas son estimaciones del mercado y pueden diferir de las tasas oficiales establecidas por el Banco Central de Venezuela. Este servicio es únicamente informativo y no constituye una oferta para realizar transacciones.</p>
+                <p class="pieCopyright">© <span id="anioActual">2026</span> <a href="/">DolarAhora</a>. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+    <script>document.getElementById('anioActual').textContent = new Date().getFullYear();</script>
     <script>
         // Actualizar fecha automáticamente
         document.getElementById('fechaActual').textContent = new Date().toLocaleDateString('es-ES', {
