@@ -218,23 +218,17 @@ body {
     animation: anilloPulso 2.6s ease-out infinite;
 }
 
-.iconoMoneda span {
-    display: grid;
-    place-items: center;
+.iconoMoneda img {
+    display: block;
     width: 76px;
     height: 76px;
     border-radius: 50%;
-    color: var(--verde);
-    background: linear-gradient(135deg, rgba(14, 203, 129, 0.16), rgba(14, 203, 129, 0.04));
     border: 1px solid rgba(14, 203, 129, 0.35);
     box-shadow: 0 10px 30px -10px rgba(14, 203, 129, 0.45);
     transition: transform 0.5s;
 }
 
-.iconoMoneda svg { width: 36px; height: 36px; transition: transform 0.7s; }
-
-.tarjetaMoneda:hover .iconoMoneda span { transform: scale(1.08) rotate(8deg); }
-.tarjetaMoneda:hover .iconoMoneda svg { transform: rotate(-8deg); }
+.tarjetaMoneda:hover .iconoMoneda img { transform: scale(1.08) rotate(8deg); }
 
 .nombreMoneda {
     font-size: 1.35rem;
